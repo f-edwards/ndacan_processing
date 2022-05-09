@@ -76,8 +76,8 @@ recode_nas<-function(x){ifelse(is.na(x),0,x)}
 
 afcars<-afcars%>%
   rename(year = fy) %>% 
-  mutate(age = floor(as.integer(rem1dt - ymd(dob))/365)) %>%
-  mutate(age = ifelse(age<0, NA, age)) %>%
+  mutate(age = AgeAtEnd) %>%
+  mutate(age = ifelse(age>=99, NA, age)) %>% 
   filter(state!=72) %>% 
   filter(age<=18) %>%
   filter(year>=2000) %>%
