@@ -94,7 +94,7 @@ rptsrc_state<-ncands %>%
              rptsrc==7 ~ "substitute care ",
              rptsrc!=99 ~ "non-professional"
            ))  %>% 
-  group_by(rpt_month, rpt_year, rptsrc, age, rptvictim,
+  group_by(staterr, rpt_month, rpt_year, rptsrc, age, rptvictim,
            fostercr, chmal1) %>% 
   summarize(n = n()) 
 
